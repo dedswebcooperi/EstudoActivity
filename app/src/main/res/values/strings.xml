@@ -5,4 +5,5 @@
     <string name="btnEntrar">Entrar</string>
 
     <string name="msgCampoObrigatorio">Campo Obrigatório</string>
+    <string name="msgBemVindo">Bem vindo, %1$s!</string>
 </resources>

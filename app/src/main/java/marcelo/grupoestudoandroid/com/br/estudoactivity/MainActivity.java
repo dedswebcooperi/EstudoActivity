@@ -1,11 +1,9 @@
 package marcelo.grupoestudoandroid.com.br.estudoactivity;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,31 +24,42 @@ public class MainActivity extends BaseActivity {
         this.edtSenha = (EditText) findViewById(R.id.edtSenha);
         this.btnEntrar = (Button) findViewById(R.id.btnEntrar);
 
-        this.edtUsuario.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (TextUtils.isEmpty(edtUsuario.getText().toString())) {
-                    edtUsuario.setError(context.getString(R.string.msgCampoObrigatorio));
-                }
-            }
-        });
-
-        this.edtSenha.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (TextUtils.isEmpty(edtSenha.getText().toString())) {
-                    edtSenha.setError(context.getString(R.string.msgCampoObrigatorio));
-                }
-            }
-        });
-
-        btnEntrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        this.edtUsuario.setOnFocusChangeListener(this.onFocusChangeCamposObrigatorios());
+        this.edtSenha.setOnFocusChangeListener(this.onFocusChangeCamposObrigatorios());
+        this.btnEntrar.setOnClickListener(this.onClickBtnEntrar());
     }
+
+    public View.OnClickListener onClickBtnEntrar () {
+        return new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                if (edtUsuario.getError() == null && edtSenha.getError() == null) {
+                    Intent intent = new Intent(context, BemVindoActivity.class);
+                    intent.putExtra(context.getString(R.string.lblUsuario), edtUsuario.getText().toString());
+                    intent.putExtra(context.getString(R.string.lblSenha), edtSenha.getText().toString());
+                    startActivity(intent);
+                }
+            }
+        };
+    }
+
+    public View.OnFocusChangeListener onFocusChangeCamposObrigatorios() {
+        return new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                EditText editText = (EditText) view;
+
+                if (TextUtils.isEmpty(editText.getText().toString())) {
+                    editText.setError(context.getString(R.string.msgCampoObrigatorio));
+                }
+            }
+        };
+    }
+
+
 
 
 }
