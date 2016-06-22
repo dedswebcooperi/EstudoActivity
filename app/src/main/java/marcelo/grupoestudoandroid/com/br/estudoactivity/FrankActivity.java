@@ -51,24 +51,27 @@ public class FrankActivity extends AppCompatActivity {
     }
 
 
-/*    public boolean onMenuItemSelected (int panel, MenuItem item){
-        switch(item.getItemId()){
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //return super.onOptionsItemSelected(item);
+
+        switch (item.getItemId()) {
             case android.R.id.home:
                 Toast.makeText(this, "Cliquei no botão Logo", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.item1:
-                Toast.makeText(this, "Item "+(item.getItemId()+1), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Item " + (item.getItemId() + 1), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.item2:
-                Toast.makeText(this, "Item "+(item.getItemId()+1), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Item " + (item.getItemId() + 1), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.item3:
-                Toast.makeText(this, "Item "+(item.getItemId()+1), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Item " + (item.getItemId() + 1), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.item4:
-                Toast.makeText(this, "Item "+(item.getItemId()+1), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Item " + (item.getItemId() + 1), Toast.LENGTH_SHORT).show();
                 break;
         }
-        return(true);
-    }*/
+        return (true);
+    }
 }
