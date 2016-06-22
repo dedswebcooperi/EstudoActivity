@@ -26,6 +26,9 @@ public class BemVindoActivity extends BaseActivity {
 
         Button btnAbrirActivity = (Button) this.findViewById(R.id.btnAbrirActivity);
         btnAbrirActivity.setOnClickListener(this.onClickBtnAbrirActivity());
+
+        Button btnAbrirActivityF = (Button) this.findViewById(R.id.btnAbrirActivityF);
+        btnAbrirActivityF.setOnClickListener(this.onClickBtnAbrirActivityF());
     }
 
     @Override
@@ -42,6 +45,17 @@ public class BemVindoActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ResultadoActivity.class);
+                startActivityForResult(intent, REQUEST_CODE);
+            }
+        };
+    }
+
+    private View.OnClickListener onClickBtnAbrirActivityF() {
+        return new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, FrankActivity.class);
                 startActivityForResult(intent, REQUEST_CODE);
             }
         };

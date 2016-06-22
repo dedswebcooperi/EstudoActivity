@@ -4,8 +4,9 @@
     <string name="lblSenha">Senha</string>
     <string name="btnEntrar">Entrar</string>
     <string name="btnAbrirActivity">Abrir Activity</string>
+    <string name="btnAbrirActivityF">Abrir Act Frank</string>
     <string name="btnFecharActivity">Fechar tela</string>
-
+    <string name="btnFecharActivityF">Fechar tela</string>
     <string name="msgCampoObrigatorio">Campo Obrigatório</string>
     <string name="msgBemVindo">Bem vindo, %1$s!</string>
     <string name="msgActivityFechada">Fechou a Activity</string>

@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".BemVindoActivity" />
+        <activity android:name=".FrankActivity" android:label="Frank Activity"/>
         <activity android:name=".ResultadoActivity"></activity>
     </application>
 
