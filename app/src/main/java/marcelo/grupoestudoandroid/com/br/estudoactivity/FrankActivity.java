@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,8 +27,8 @@ public class FrankActivity extends AppCompatActivity {
         Button btnFecharActivity = (Button) this.findViewById(R.id.btnFecharActivityF);
         btnFecharActivity.setOnClickListener(this.onClickBtnFechar());
 
-       // android.app.ActionBar ab = getActionBar();
-       // ab.setDisplayHomeAsUpEnabled(true); // Transforma o titulo da Action Bar em um botão
+       android.support.v7.app.ActionBar ab = getSupportActionBar();
+       ab.setDisplayHomeAsUpEnabled(true); // Transforma o titulo da Action Bar em um botão
     }
 
     public View.OnClickListener onClickBtnFechar () {
@@ -50,15 +51,20 @@ public class FrankActivity extends AppCompatActivity {
         return(true);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //return super.onOptionsItemSelected(item);
 
         switch (item.getItemId()) {
-            case android.R.id.home:
-                Toast.makeText(this, "Cliquei no botão Logo", Toast.LENGTH_SHORT).show();
-                break;
+//            case android.R.id.home:
+//                //Toast.makeText(this, "Cliquei no botão Logo", Toast.LENGTH_SHORT).show();
+//                finish();
+//                return true;
             case R.id.item1:
                 Toast.makeText(this, "Item " + (item.getItemId() + 1), Toast.LENGTH_SHORT).show();
                 break;
@@ -72,6 +78,6 @@ public class FrankActivity extends AppCompatActivity {
                 Toast.makeText(this, "Item " + (item.getItemId() + 1), Toast.LENGTH_SHORT).show();
                 break;
         }
-        return (true);
+        return super.onOptionsItemSelected(item);
     }
 }

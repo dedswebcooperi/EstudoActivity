@@ -10,4 +10,7 @@
     <string name="msgCampoObrigatorio">Campo Obrigatório</string>
     <string name="msgBemVindo">Bem vindo, %1$s!</string>
     <string name="msgActivityFechada">Fechou a Activity</string>
+    <string name="btnAbrirListView">Abrir ListView</string>
+    <string name="alertProdutoSelecionadoTitle">Produto Selecionado</string>
+    <string name="btnAlertOK">OK</string>
 </resources>

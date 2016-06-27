@@ -32,5 +32,12 @@
            android:id="@+id/btnAbrirActivityF"
            android:text="@string/btnAbrirActivityF"
        />
+
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/btnAbrirListView"
+           android:text="@string/btnAbrirListView"
+           />
    </LinearLayout>
 </RelativeLayout>

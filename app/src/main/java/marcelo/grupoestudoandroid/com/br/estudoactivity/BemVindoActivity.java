@@ -29,7 +29,10 @@ public class BemVindoActivity extends BaseActivity {
         btnAbrirActivity.setOnClickListener(this.onClickBtnAbrirActivity());
 
         Button btnAbrirActivityF = (Button) this.findViewById(R.id.btnAbrirActivityF);
-        btnAbrirActivityF.setOnClickListener(this.onClickBtnAbrirActivityF());
+        btnAbrirActivityF.setOnClickListener(this.onClickBtnAbrirActivity());
+
+        Button btnAbrirListView = (Button) this.findViewById(R.id.btnAbrirListView);
+        btnAbrirListView.setOnClickListener(this.onClickBtnAbrirActivity());
     }
 
     @Override
@@ -45,19 +48,20 @@ public class BemVindoActivity extends BaseActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ResultadoActivity.class);
-                startActivityForResult(intent, REQUEST_CODE);
-            }
-        };
-    }
+                Intent intent;
+                Button btnView = (Button) view;
 
-    private View.OnClickListener onClickBtnAbrirActivityF() {
-        return new View.OnClickListener() {
+                if (btnView.getText().toString().equals(context.getString(R.string.btnAbrirActivity))) {
+                    intent = new Intent(context, ResultadoActivity.class);
+                    startActivityForResult(intent, REQUEST_CODE);
+                    return;
+                } else if (btnView.getText().toString().equals(context.getString(R.string.btnAbrirActivityF))) {
+                    intent = new Intent(context, FrankActivity.class);
+                } else {
+                    intent = new Intent(context, ProdutoListActivity.class);
+                }
 
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, FrankActivity.class);
-                startActivityForResult(intent, REQUEST_CODE);
+                startActivity(intent);
             }
         };
     }

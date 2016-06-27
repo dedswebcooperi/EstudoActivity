@@ -15,9 +15,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BemVindoActivity" />
-        <activity android:name=".FrankActivity" android:label="Frank Activity"/>
-        <activity android:name=".ResultadoActivity"></activity>
+        <activity
+            android:name=".BemVindoActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".FrankActivity"
+            android:label="Frank Activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ResultadoActivity"
+            android:parentActivityName=".BemVindoActivity" />
+        <activity android:name=".ProdutoListActivity"></activity>
     </application>
 
 </manifest>

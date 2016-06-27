@@ -10,7 +10,7 @@
     <item
         android2:id="@+id/item2"
         android:icon="@mipmap/ic_launcher"
-        android:showAsAction="ifRoom|withText"
+        android:showAsAction="ifRoom"
         android2:title="Item 2" />
     <item
         android2:id="@+id/item3"
